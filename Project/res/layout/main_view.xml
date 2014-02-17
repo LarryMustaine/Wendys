@@ -2,14 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/header_shadow" >
+    android:background="@color/Gray_70" >
 
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="35dp"
+        android:layout_centerVertical="true"
         android:orientation="vertical" >
 
         <FrameLayout
@@ -35,26 +35,27 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/action_bar_title"
-            android:textSize="22sp"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textSize="22sp" />
     </LinearLayout>
 
-    <View
-        android:id="@+id/separator"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
         android:layout_below="@+id/header"
-        android:layout_marginTop="3dp"
-        android:background="@color/white" />
+        android:background="@drawable/header_shadow" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/separator"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:text="@string/main_enter"
-		android:textSize="25sp"        
-        android:textColor="@color/gray" />
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:background="@color/white"
+            android:text="@string/main_enter"
+            android:textSize="20sp" />
+    </RelativeLayout>
 
 </RelativeLayout>
