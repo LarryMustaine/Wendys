@@ -7,9 +7,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 public class LoginActivity extends Activity {
 
+	private int PASSWORD_REQUEST_CODE = 0;
+	public static int PASSWORD_RESULT_OK = 200;
+	public static int PASSWORD_RESULT_FAIL = 300;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -24,9 +29,19 @@ public class LoginActivity extends Activity {
 			public void onClick(View v) {
 				Intent myIntent = new Intent(LoginActivity.this, PasswordActivity.class);
 				myIntent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-				LoginActivity.this.startActivity(myIntent);
+				LoginActivity.this.startActivityForResult(myIntent, PASSWORD_REQUEST_CODE);
 				overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 			}
 		});
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		
+		if(requestCode == PASSWORD_REQUEST_CODE && resultCode == PASSWORD_RESULT_OK){
+			//TODO LAUNCH MAIN ACTIVITY
+			Toast.makeText(LoginActivity.this, "OK", Toast.LENGTH_SHORT).show();
+		}
 	}
 }

@@ -21,6 +21,8 @@
     <string name="app_name">TLC Wendys</string>
     <string name="app_type">Free</string>
     
+    <string name="wendys_password">a</string>
+    
     <string name="amazon_bucket">VideoGamesMusicBucket/ErrorLogs</string>
     <string name="amazon_access_key">AKIAJTGLCTS6YM6HZ7OA</string>
     <string name="amazon_secret_key">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</string>
@@ -65,9 +67,9 @@
     <string name="amazon_upload_ok">Error report was sent. DataBase was updated. Thank you for sending the report. We will fix it ASAP</string> 
     <string name="email_text">Hi There, I want to request the following Music/Tones for the app to make it awesome:\n\n1:\n2:\n3:\n\nThank you,\n\nSincerely,</string>
     
-    <string name="main_enter">Entrar</string>
-    
+    <string name="password_enter">Entrar</string>
     <string name="password_enter_password">Password</string>
+    <string name="password_wrong_password">Password Incorrecto</string>
     
     <string name="about_description">© 2014 LarryStudio Inc.</string>
     <string name="about_description2">All rights reserved.</string>
