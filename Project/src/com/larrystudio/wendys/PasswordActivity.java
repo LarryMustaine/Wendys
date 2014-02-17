@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
-
 public class PasswordActivity extends Activity {
 
 	@Override
@@ -14,6 +13,12 @@ public class PasswordActivity extends Activity {
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.main_view);
+		setContentView(R.layout.password_activity);
+	}
+
+	@Override
+	public void onBackPressed() {
+		finish();
+		PasswordActivity.this.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
 	}
 }
