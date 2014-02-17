@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="Gray_70">#38403a</color>
+    
+	<color name="black">#ff000000</color>
+	<color name="white">#ffffffff</color>
+	<color name="lightGreen">#ffdad7ce</color>
+	<color name="darkGreen">#ff3d5c28</color>
+	<color name="darkOrange">#cc5506</color>
+	<color name="liteOrange">#ea9f3b</color>
+	
+	<color name="gray">#ffe0e0e0</color>
+	<color name="clear">#00000000</color>
+	<color name="blue">#FF2076B8</color>
+	<color name="liteGray">#FFF0F0F0</color>
+	<color name="lightGray">#cbcbcb</color>
+	<color name="lightBrown">#d5d1c0</color>
+	<color name="darkYellow">#EAAA00</color>
+	<color name="lightBlue">#ff154A8E</color>
+	<color name="liteGreen">#94bf76</color>
+	
+	<color name="lightYellowTrans">#99FFD13F</color>
+	<color name="darkYellowTrans">#99EAAA00</color>
+	<color name="liteGreenTrans">#9994bf76</color>
+	<color name="darkGreenTrans">#993d5c28</color>
+	<color name="lightGrayTrans">#99cbcbcb</color>
+	<color name="darkGrayTrans">#99787878</color>
+	<color name="blueTrans">#990066CC</color>
+	<color name="lightBlueTrans">#992677B6</color>
+	<color name="darkOrangeTrans">#99cc5506</color>
+	<color name="liteOrangeTrans">#99ea9f3b</color>
+	
+	<color name="darkGray">#787878</color>
+	<color name="transparent">#00000000</color>
+	<color name="transparent_50percent">#CCd5dad5</color>
+	<color name="darkBrown">#FFA8592B</color>
+	<color name="lightYellow">#ffeeeb90</color>
+</resources>

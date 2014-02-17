@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity$DummySectionFragment">
+
+        <RelativeLayout
+            android:id="@+id/layoutSetAsRingtone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            
+            <TextView
+            android:id="@+id/txtSetAsRingtone"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_set_as_ringtone"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+            
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/layoutSetAsNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <TextView
+            android:id="@+id/txtSetAsNotification"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_set_as_notification"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+            
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/layoutSetAsAlarm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <TextView
+            android:id="@+id/txtSetAsAlarm"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_set_as_alarm"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+            
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/layoutSetAsContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <TextView
+            android:id="@+id/txtSetAsContact"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_set_as_contact"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+            
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/layoutCopyFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <TextView
+            android:id="@+id/txtCopyFile"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_copy_file"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+            
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:id="@+id/layoutDeleteFile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+            
+            <TextView
+            android:id="@+id/txtDeleteFile"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dialog_delete_file"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+            
+        </RelativeLayout>
+   
+</LinearLayout>

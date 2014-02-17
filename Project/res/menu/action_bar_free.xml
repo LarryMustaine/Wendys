@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+   <item
+        android:id="@+id/menu_buyApp"
+        android:icon="@drawable/ic_action_upload"
+        android:showAsAction="always"
+        android:title="@string/action_buy_app"/>
+    <item
+        android:id="@+id/menu_rateApp"
+        android:icon="@drawable/ic_action_good"
+        android:showAsAction="always"
+        android:title="@string/action_rate_app"/>
+
+</menu>
