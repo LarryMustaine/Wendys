@@ -6,45 +6,74 @@
     android:baselineAligned="false"
     android:orientation="vertical" >
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp" >
-
-        <ImageView
-            android:id="@+id/image_images"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_gravity="center"
-            android:src="@drawable/banner_images" />
+        android:background="@color/blue"
+        android:orientation="horizontal" >
 
         <ImageView
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:src="@drawable/ic_action_camera" />
-    </FrameLayout>
 
-    <FrameLayout
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/black" >
+
+            <ImageView
+                android:id="@+id/image_images"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:src="@drawable/banner_images" />
+
+            <ImageView
+                android:id="@+id/image_frame_images"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/img_menu_frame" />
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp" >
-
-        <ImageView
-            android:id="@+id/image_videos"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:src="@drawable/banner_videos" />
+        android:background="@color/Gray_70"
+        android:orientation="horizontal" >
 
         <ImageView
             android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|left"
             android:src="@drawable/ic_action_video" />
-    </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@color/black" >
+
+            <ImageView
+                android:id="@+id/image_videos"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:src="@drawable/banner_videos" />
+
+            <ImageView
+                android:id="@+id/image_frame_videos"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/img_menu_frame" />
+        </FrameLayout>
+    </LinearLayout>
 
 </LinearLayout>

@@ -11,6 +11,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 @SuppressLint("ValidFragment")
@@ -19,6 +22,8 @@ public class MenuFragment extends Fragment{
 	private ViewPager mViewPager;
 	private ImageView imgImages;
 	private ImageView imgVideos;
+	private ImageView imgFrameImages;
+	private ImageView imgFrameVideos;
 	
 	public MenuFragment(){}
 	
@@ -32,6 +37,8 @@ public class MenuFragment extends Fragment{
 		
 		imgImages = (ImageView) rootView.findViewById(R.id.image_images);
 		imgVideos = (ImageView) rootView.findViewById(R.id.image_videos);
+		imgFrameImages = (ImageView) rootView.findViewById(R.id.image_frame_images);
+		imgFrameVideos = (ImageView) rootView.findViewById(R.id.image_frame_videos);
 		
 		imgImages.setOnClickListener(new OnClickListener() {
 			
@@ -50,5 +57,42 @@ public class MenuFragment extends Fragment{
 		});
 		
 		return rootView;
+	}
+
+	@Override
+	public void onResume() {
+		super.onResume();
+		
+		setAnimation(imgImages, imgFrameImages);
+		setAnimation(imgVideos, imgFrameVideos);
+	}
+	
+	public void hideImages(){
+		imgImages.setVisibility(View.INVISIBLE);
+		imgVideos.setVisibility(View.INVISIBLE);
+		imgFrameImages.setVisibility(View.INVISIBLE);
+		imgFrameVideos.setVisibility(View.INVISIBLE);
+	}
+	
+	public void setAnimation(final ImageView imgImage, final ImageView imgFrame){
+		
+		imgImage.setVisibility(View.INVISIBLE);
+		imgFrame.setVisibility(View.INVISIBLE);
+		
+		Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_in_right);
+	    animation.setDuration(1000);
+	    
+	    animation.setAnimationListener(new AnimationListener() {
+	        @Override public void onAnimationStart(Animation animation) {}
+	        @Override public void onAnimationRepeat(Animation animation) {}
+
+	        @Override
+	        public void onAnimationEnd(Animation animation) {
+	        	imgImage.setVisibility(View.VISIBLE);
+	        	imgFrame.setVisibility(View.VISIBLE);
+	        }
+	    });
+
+	    imgFrame.startAnimation(animation);
 	}
 }

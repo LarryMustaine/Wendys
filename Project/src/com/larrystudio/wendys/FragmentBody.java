@@ -43,6 +43,11 @@ public class FragmentBody extends Fragment {
 			@Override
 			public void onPageSelected(int position) {
 				pageSelected = position;
+				
+				if(position == MENU_SECTION)
+					fragment[MENU_SECTION].onResume();
+				else
+					((MenuFragment) fragment[MENU_SECTION]).hideImages();
 			}
 			
 			@Override public void onPageScrolled(int arg0, float arg1, int arg2) {}
