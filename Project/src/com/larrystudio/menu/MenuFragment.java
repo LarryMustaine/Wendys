@@ -75,7 +75,6 @@ public class MenuFragment extends Fragment{
 	}
 	
 	public void setAnimation(final ImageView imgImage, final ImageView imgFrame){
-		
 		imgImage.setVisibility(View.INVISIBLE);
 		imgFrame.setVisibility(View.INVISIBLE);
 		

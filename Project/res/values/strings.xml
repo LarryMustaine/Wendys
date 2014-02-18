@@ -1,24 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <!-- CHANGE BETWEEN FREE/PAY/TESTING DB
-    	
-    	PAY  DB: https://dl.dropboxusercontent.com/s/60snbn1x1pzzj67/BD_Pay.txt?dl=1
-    	FREE DB: https://dl.dropboxusercontent.com/s/5miv5xrvirn07jd/BD_Free.txt?dl=1
-    	TEST DB: https://dl.dropboxusercontent.com/s/gleont84gpefaqj/BD_Testing.txt?dl=1
-    -->
-    
-    <string name="DB_URL">https://dl.dropboxusercontent.com/s/gleont84gpefaqj/BD_Testing.txt?dl=1</string>
-    <string name="app_name">TLC Wendys</string>
+	<string name="app_name">TLC Wendys</string>
+	
+    <string name="DB_IMAGES_URL">https://dl.dropboxusercontent.com/s/muatgkyhqw907t6/BD_Imagenes.txt?dl=1</string>
+    <string name="DB_VIDEOS_URL">https://dl.dropboxusercontent.com/s/ptg6w0bt5965yj5/BD_Videos.txt?dl=1</string>
     
     <string name="wendys_password">a</string>
-    
-    <string name="amazon_bucket">VideoGamesMusicBucket/ErrorLogs</string>
-    <string name="amazon_access_key">AKIAJTGLCTS6YM6HZ7OA</string>
-    <string name="amazon_secret_key">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</string>
-    
     <string name="bugsense_api_key">67e27f15</string>
-    <string name="gcm_project_id">1002937414761</string>
+    
+    <string name="db_name">WendysDB</string>
     
     <string name="action_rate_app">Rate App</string>
     
@@ -27,32 +17,10 @@
     <string name="title_videos_fragment">Videos</string>
     
     <string name="content_description">Image Holder</string>
-    <string name="downloading_db">Getting info from server&#8230;</string>
-    <string name="saving_db">Saving&#8230; Please do not turn off your console.</string>
-	<string name="refreshing_progress">0%</string>
-    <string name="dialog_download">Download Sound</string>
-    <string name="dialog_play_sound">Play Sound</string>
-    <string name="dialog_delete_sound">Delete Sound</string>
-    <string name="dialog_downloading">Downloading&#8230;</string>
-    <string name="dialog_cancel">Cancel</string>
-    <string name="dialog_ok">OK</string>
+    <string name="downloading_db">Bajando Informacion&#8230;</string>
+    <string name="saving_db">Guardando&#8230;</string>
     <string name="dialog_error">Error while downloading information, Please try again later.</string>
-    <string name="row_sound_text">Sound Text</string>
-    <string name="dialog_set_as_ringtone">Set As Ringtone</string>
-    <string name="dialog_set_as_notification">Set As Notification</string>
-    <string name="dialog_set_as_alarm">Set As Alarm</string>
-    <string name="dialog_set_as_contact">Set to Contact</string>
-    <string name="dialog_copy_file">Copy File</string>
-    <string name="dialog_delete_file">Delete File</string>
-    <string name="rate_this_app_text_payment">Thank you for using Video Games Music app! and supporting the Hungry Developers D: Give us a hand by Rating and Comment. Thanks!</string>
-    <string name="rate_this_app_text_free">Get the full app by buying it, get access to tons of content and weekly updates with new content! Support the Hungry Developers!</string>
-    <string name="rate_this_app_remind_later">Remind me Later</string>
-    <string name="rate_this_app">Rate this App!</string>
-    <string name="amazon_upload_log_notice">We encountered issues while playing/downloading this sound. A report is going to be send right away! We apologized for the inconvenience.</string>
-    <string name="amazon_upload_log_uploading">Sending Error Report&#8230;</string>
-    <string name="amazon_upload_error">Error while sending Error Report. Maybe a connection issue. Please try again later.</string>
-    <string name="amazon_upload_ok">Error report was sent. DataBase was updated. Thank you for sending the report. We will fix it ASAP</string> 
-    <string name="email_text">Hi There, I want to request the following Music/Tones for the app to make it awesome:\n\n1:\n2:\n3:\n\nThank you,\n\nSincerely,</string>
+    <string name="email_text">Hola,\n\nQuisiera mandar los siguientes comentarios:\n\n\nGracias,\n\nAtentamente,</string>
     
     <string name="password_enter">Entrar</string>
     <string name="password_enter_password">Password</string>

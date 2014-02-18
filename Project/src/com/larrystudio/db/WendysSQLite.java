@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
  
-public class SoundsSQLite extends SQLiteOpenHelper {
+public class WendysSQLite extends SQLiteOpenHelper {
  
     String sqlCreate  = "CREATE TABLE Sounds ( Category         TEXT, " +
     										 " Section     		TEXT, " +
@@ -25,7 +25,7 @@ public class SoundsSQLite extends SQLiteOpenHelper {
 			                                     " Status      TEXT, " +
 			                                     " LocalPath   TEXT)";
     
-    public SoundsSQLite(Context context, String nombre, CursorFactory factory, int version) {
+    public WendysSQLite(Context context, String nombre, CursorFactory factory, int version) {
         super(context, nombre, factory, version);
     }
  

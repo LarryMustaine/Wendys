@@ -1,5 +1,7 @@
 package com.larrystudio.db;
 
+import com.larrystudio.wendys.R;
+
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
@@ -25,7 +27,7 @@ public final class DataBaseAccess {
 	}
 	
 	private static void openDatabaseConnection() {
-		databaseAccess = SQLiteDatabase.openDatabase(context.getDatabasePath("SoundsDB").toString(), null, SQLiteDatabase.OPEN_READWRITE);
+		databaseAccess = SQLiteDatabase.openDatabase(context.getDatabasePath(context.getString(R.string.db_name)).toString(), null, SQLiteDatabase.OPEN_READWRITE);
 	}
 	
 	public static void closeDatabaseConnection() {
@@ -33,9 +35,8 @@ public final class DataBaseAccess {
 			databaseAccess.close();
 	}
 	
-    private static void createDB() 
-    {
-    	SoundsSQLite createDBObject = new SoundsSQLite (context, "SoundsDB", null, 1);
+    private static void createDB() {
+    	WendysSQLite createDBObject = new WendysSQLite (context, context.getString(R.string.db_name), null, 1);
 		SQLiteDatabase db = createDBObject.getWritableDatabase();
 		db.close();	
 	}

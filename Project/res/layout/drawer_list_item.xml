@@ -21,7 +21,6 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="10dp"
         android:layout_toRightOf="@+id/imgIcon"
-        android:text="@string/row_sound_text"
         android:textColor="@color/white"
         android:textSize="19sp" />
 

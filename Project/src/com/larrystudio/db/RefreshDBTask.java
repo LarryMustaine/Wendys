@@ -39,7 +39,7 @@ public class RefreshDBTask extends AsyncTask<Void, Void, Boolean>
 	protected Boolean doInBackground(Void... params){
 		
 		try {
-			URL url = new URL(context.getString(R.string.DB_URL));
+			URL url = new URL(context.getString(R.string.DB_IMAGES_URL));
 			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 			urlConnection.setRequestMethod("GET");
 			urlConnection.setDoOutput(true);
