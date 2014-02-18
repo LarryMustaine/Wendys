@@ -1,5 +1,9 @@
 package com.larrystudio.db;
 
+import java.util.ArrayList;
+
+import tools.GenericObject;
+
 import com.larrystudio.wendys.R;
 
 import android.content.Context;
@@ -44,7 +48,7 @@ public final class DataBaseAccess {
     
     public static boolean ifImagesIsEmpty(SQLiteDatabase dbAccess){
     	if(dbAccess.isOpen()){
-    		Cursor mCount= dbAccess.rawQuery("select count(*) from Images", null);
+    		Cursor mCount= dbAccess.rawQuery("select count(*) from " + WendysSQLite.TABLE_IMAGES, null);
 			mCount.moveToFirst();
 			int count= mCount.getInt(0);
 			mCount.close();
@@ -58,7 +62,7 @@ public final class DataBaseAccess {
     
     public static boolean ifVideosIsEmpty(SQLiteDatabase dbAccess){
     	if(dbAccess.isOpen()){
-    		Cursor mCount= dbAccess.rawQuery("select count(*) from Videos", null);
+    		Cursor mCount= dbAccess.rawQuery("select count(*) from " + WendysSQLite.TABLE_VIDEOS, null);
 			mCount.moveToFirst();
 			int count= mCount.getInt(0);
 			mCount.close();
@@ -69,4 +73,25 @@ public final class DataBaseAccess {
     	
     	return true;
     }
+
+	public static ArrayList<GenericObject> getInfo(SQLiteDatabase dbAccess, String TABLE) {
+		ArrayList<GenericObject> objects = new ArrayList<GenericObject>();
+		
+		if(dbAccess.isOpen()){
+    		Cursor INFO = dbAccess.rawQuery("select url, comment from " + TABLE, null);
+    		INFO.moveToFirst();
+    		
+    		for(int i=0, length=INFO.getCount(); i<length; i++){
+    			GenericObject object = new GenericObject();
+    			object.setURL(INFO.getString(0));
+    			object.setComment(INFO.getString(1));
+    			
+    			objects.add(object);
+    		}
+    		
+    		INFO.close();
+    	}
+		
+		return objects;
+	}
 }

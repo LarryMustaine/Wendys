@@ -7,8 +7,11 @@ import android.database.sqlite.SQLiteOpenHelper;
  
 public class WendysSQLite extends SQLiteOpenHelper {
  
-    String sqlCreate  = "CREATE TABLE Images (url TEXT primary key, comment TEXT)";
-    String sqlCreate2 = "CREATE TABLE Videos (url TEXT primary key, comment TEXT)";
+	public static String TABLE_IMAGES = "Images";
+	public static String TABLE_VIDEOS = "Videos";
+	
+    String sqlCreate  = "CREATE TABLE " + TABLE_IMAGES + " (url TEXT primary key, comment TEXT)";
+    String sqlCreate2 = "CREATE TABLE " + TABLE_VIDEOS + " (url TEXT primary key, comment TEXT)";
     
     public WendysSQLite(Context context, String nombre, CursorFactory factory, int version) {
         super(context, nombre, factory, version);

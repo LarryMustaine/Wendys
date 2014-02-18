@@ -11,17 +11,16 @@ import java.net.URL;
 import android.content.Context;
 import android.os.AsyncTask;
 
-
 public class RefreshDBTask extends AsyncTask<Void, Void, Boolean>
 {
 	private Context context;
-	private UpdateDB updateDB;
+	private TaskResult callBack;
 	private String DB_URL;
 	
-	public RefreshDBTask(Context context, String DB_URL, UpdateDB updateDB){
+	public RefreshDBTask(Context context, String DB_URL, TaskResult callBack){
 		this.context = context;
 		this.DB_URL = DB_URL;
-		this.updateDB = updateDB;
+		this.callBack = callBack;
 	}
 
 	@Override
@@ -63,13 +62,8 @@ public class RefreshDBTask extends AsyncTask<Void, Void, Boolean>
 		super.onPostExecute(result);
 		
 		if(result)
-			updateDB.onSuccess();
+			callBack.onSuccess();
 		else
-			updateDB.onFail();
-	}
-	
-	public interface UpdateDB{	
-		public void onSuccess();
-		public void onFail();
+			callBack.onFail();
 	}
 }

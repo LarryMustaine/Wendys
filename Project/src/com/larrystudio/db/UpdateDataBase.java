@@ -11,21 +11,39 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 
-public class UpdateDataBase{
+public class UpdateDataBase extends AsyncTask<Void, Void, Boolean>{
 
 	private Context context;
 	private File file;
 	private ArrayList<String> parsedFileList;
 	private SQLiteDatabase dbAccess;
+	private TaskResult callBack;
+	private String Table;
 	
-	public UpdateDataBase(Context context) {
+	public UpdateDataBase(Context context, TaskResult callBack, String Table) {
 		this.context = context;
-		dbAccess = getDatabaseWriteConnection(context);
+		this.callBack = callBack;
+		this.Table = Table;
+		dbAccess = DataBaseAccess.getDatabaseConnection(context);
 	}
 	
-	private SQLiteDatabase getDatabaseWriteConnection(Context context) {
-		return DataBaseAccess.getDatabaseConnection(context);
+	@Override
+	protected Boolean doInBackground(Void... params) {
+		OpenFile();
+		ParseFile();
+		return UpdateDatabase();
+	}
+	
+	@Override
+	protected void onPostExecute(Boolean result) {
+		super.onPostExecute(result);
+		
+		if(result)
+			callBack.onSuccess();
+		else
+			callBack.onFail();
 	}
 
 	public void OpenFile() {
@@ -50,61 +68,33 @@ public class UpdateDataBase{
 		}  
 	}
 
-	public void UpdateDatabase() {
+	public boolean UpdateDatabase() {
 		if(parsedFileList.size()>0){
 			saveIntoDB();
 			deleteDBFile();
-		}
+			return true;
+		} else
+			return false;
 	}
 
 	private void saveIntoDB() {
-		String Table = null;
 		ArrayList<String[]> splitedList = splitList();
 		ContentValues UPDATE_DB = new ContentValues();
 		
 		if(dbAccess.isOpen()){
 			for(int i=0, length=splitedList.size(); i<length ; i++){
 				String[] separated = splitedList.get(i);
+
+				String URL_Parsed =  separated[0].replace("www.dropbox", "dl.dropboxusercontent");
+				URL_Parsed += "?dl=1";
 				
-				if(separated[0].equals("Categories")){
-					Table = "Categories";
-				} else if(separated[0].equals("Sounds")){
-					Table = "Sounds";
-				} else{
-					
-					String Url_Parsed =  separated[3].replace("www.dropbox", "dl.dropboxusercontent");
-					Url_Parsed += "?dl=1";
-					
-					UPDATE_DB.put("Section"   , separated[0]);
-					UPDATE_DB.put("Name"      , separated[1]);
-					UPDATE_DB.put("Downloaded", separated[2]);
-					UPDATE_DB.put("URL"       , Url_Parsed);
-					UPDATE_DB.put("Status"    , separated[4]);
-					
-					if(Table.equals("Sounds")){
-						String Url_Sound_Parsed =  separated[6].replace("www.dropbox", "dl.dropboxusercontent");
-						Url_Sound_Parsed += "?dl=1";
-								
-						UPDATE_DB.put("Category"        , separated[5]);
-						UPDATE_DB.put("URL_Sound"       , Url_Sound_Parsed);
-						UPDATE_DB.put("Downloaded_Sound", separated[7]);
-					}
-					
-					try{
-						dbAccess.insertOrThrow(Table, null, UPDATE_DB);
-					} catch (SQLException e){
-						String CONDITION = null;
-						UPDATE_DB.clear();
-						UPDATE_DB.put("Status", separated[4]);
-						
-						if(Table.equals("Categories")){
-							CONDITION = "URL = '" + separated[3] + "'";
-						} else if(Table.equals("Sounds")){
-							CONDITION = "URL_Sound = '" + separated[6] + "'";
-						}
-						
-						dbAccess.update(Table, UPDATE_DB, CONDITION, null);
-					}
+				UPDATE_DB.put("comment" , separated[1]);
+				UPDATE_DB.put("url"     , URL_Parsed);
+				
+				try{
+					dbAccess.insertOrThrow(Table, null, UPDATE_DB);
+				} catch (SQLException e){
+					e.printStackTrace();
 				}
 			}
 		}
