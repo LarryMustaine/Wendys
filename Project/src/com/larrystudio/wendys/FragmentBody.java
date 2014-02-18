@@ -44,9 +44,7 @@ public class FragmentBody extends Fragment {
 			public void onPageSelected(int position) {
 				pageSelected = position;
 				
-				if(position == MENU_SECTION)
-					fragment[MENU_SECTION].onResume();
-				else
+				if(position != MENU_SECTION)
 					((MenuFragment) fragment[MENU_SECTION]).hideImages();
 			}
 			
@@ -106,6 +104,7 @@ public class FragmentBody extends Fragment {
 		switch(pageSelected){
 		case MENU_SECTION: return false;
 		case IMAGES_SECTION:
+			((MenuFragment) fragment[MENU_SECTION]).animateImages();
 		case VIDEOS_SECTION:
 			mViewPager.setCurrentItem(MENU_SECTION);
 		}

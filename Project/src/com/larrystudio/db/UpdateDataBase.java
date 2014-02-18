@@ -46,12 +46,12 @@ public class UpdateDataBase extends AsyncTask<Void, Void, Boolean>{
 			callBack.onFail();
 	}
 
-	public void OpenFile() {
+	private void OpenFile() {
 		File cacheDir = context.getCacheDir(); 
 		file = new File(cacheDir,"DB.txt");
 	}
 	
-	public void ParseFile() {
+	private void ParseFile() {
 		parsedFileList = new ArrayList<String>();
 		
 		try {
@@ -68,7 +68,7 @@ public class UpdateDataBase extends AsyncTask<Void, Void, Boolean>{
 		}  
 	}
 
-	public boolean UpdateDatabase() {
+	private boolean UpdateDatabase() {
 		if(parsedFileList.size()>0){
 			saveIntoDB();
 			deleteDBFile();

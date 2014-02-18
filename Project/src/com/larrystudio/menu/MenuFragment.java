@@ -63,10 +63,14 @@ public class MenuFragment extends Fragment{
 	public void onResume() {
 		super.onResume();
 		
+		animateImages();
+	}
+	
+	public void animateImages() {
 		setAnimation(imgImages, imgFrameImages);
 		setAnimation(imgVideos, imgFrameVideos);
 	}
-	
+
 	public void hideImages(){
 		imgImages.setVisibility(View.INVISIBLE);
 		imgVideos.setVisibility(View.INVISIBLE);
