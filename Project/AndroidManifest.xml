@@ -36,7 +36,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppBaseTheme">
         <activity
-            android:name="com.larrystudio.wendys.LoginActivity"
+            android:name="com.larrystudio.wendys.MainActivity"
             android:label="@string/app_name" 
             android:launchMode="singleTask"
 			android:screenOrientation="portrait">
@@ -51,9 +51,10 @@
             android:name="com.larrystudio.about.About"
 			android:screenOrientation="portrait"/>  
 			
+        <!--
         <activity
             android:name="com.larrystudio.wendys.MainActivity"
-			android:screenOrientation="portrait"/>  
+			android:screenOrientation="portrait"/>  -->  
 			
         <activity
             android:name="com.larrystudio.wendys.PasswordActivity"

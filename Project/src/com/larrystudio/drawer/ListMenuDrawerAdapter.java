@@ -2,7 +2,6 @@ package com.larrystudio.drawer;
 
 import com.larrystudio.wendys.R;
 
-import extras.Codes;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,28 +13,19 @@ import android.widget.TextView;
 public class ListMenuDrawerAdapter extends BaseAdapter{
 	
 	public final static String RATE_APP = "Rate App";
-	public final static String MAKE_REQUEST = "Make a Request";
-	public final static String BUY_APP = "Upgrade Application";
 	public final static String ABOUT = "About";
     public static String[] menuTitle;
     private int[] menuIcon;
     private LayoutInflater inflater;
-    private Context context;
     
 	public ListMenuDrawerAdapter(Context context) {
-		this.context = context;
 		this.inflater = LayoutInflater.from(context);
 		generateMenuItems();
 	}
 
 	private void generateMenuItems() {
-		if(context.getString(R.string.app_type).equals(Codes.APP_TYPE_FREE)){
-			menuTitle = new String[]{RATE_APP, MAKE_REQUEST, BUY_APP, ABOUT};
-			menuIcon = new int[]{R.drawable.ic_action_important, R.drawable.ic_action_gamepad, R.drawable.ic_action_upload, R.drawable.ic_action_help};
-		}else if(context.getString(R.string.app_type).equals(Codes.APP_TYPE_PAY)){
-			menuTitle = new String[]{RATE_APP, MAKE_REQUEST, ABOUT};
-			menuIcon = new int[]{R.drawable.ic_action_important, R.drawable.ic_action_gamepad, R.drawable.ic_action_help};
-		}
+		menuTitle = new String[]{RATE_APP, ABOUT};
+		menuIcon = new int[]{R.drawable.ic_action_important, R.drawable.ic_action_help};
 	}
 
 	@Override

@@ -1,16 +1,12 @@
 package com.larrystudio.wendys;
 
 import tools.RateApp;
-import tools.SendEmail;
 
 import com.bugsense.trace.BugSenseHandler;
 import com.larrystudio.about.About;
 import com.larrystudio.actionbar.ActionBarAccess;
 import com.larrystudio.drawer.ListMenuDrawerAdapter;
-import com.larrystudio.gcm.GCMManager;
 import com.larrystudio.wendys.R;
-
-import extras.Codes;
 
 import android.content.Intent;
 import android.os.Build;
@@ -39,10 +35,8 @@ public class MainActivity extends FragmentActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
+        setContentView(R.layout.activity_main);
     	
-		//BugSenseHandler.I_WANT_TO_DEBUG = true;
-		//BugSenseHandler.initAndStartSession(this, this.getString(R.string.bugsense_api_key));
     	ActionBarAccess.instantiateActionBar(this);
     	
         fragment = new FragmentBody();
@@ -55,7 +49,7 @@ public class MainActivity extends FragmentActivity {
         setDrawerMenu();
         setDrawerToggle();
         
-        new GCMManager(this).startGCMService();
+       // new GCMManager(this).startGCMService();
     }
 
 	private void setDrawerMenu() {
@@ -71,10 +65,6 @@ public class MainActivity extends FragmentActivity {
 				
 				if(selection.equals(ListMenuDrawerAdapter.RATE_APP)){
 					new RateApp(MainActivity.this);
-				}else if(selection.equals(ListMenuDrawerAdapter.MAKE_REQUEST)){
-					new SendEmail(MainActivity.this);
-				}else if(selection.equals(ListMenuDrawerAdapter.BUY_APP)){
-					new RateApp(MainActivity.this, getString(R.string.app_pay_package_name));
 				}else if(selection.equals(ListMenuDrawerAdapter.ABOUT)){
 					Intent myIntent = new Intent(MainActivity.this, About.class);
 					MainActivity.this.startActivity(myIntent);
@@ -90,8 +80,8 @@ public class MainActivity extends FragmentActivity {
                 this,
                 mDrawerLayout,
                 R.drawable.ic_action_gamepad,
-                R.string.action_bar_subtitle,
-                R.string.action_bar_subtitle
+                R.string.app_name,
+                R.string.app_name
         );
       
       mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -104,10 +94,7 @@ public class MainActivity extends FragmentActivity {
 
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) {
-		if(getString(R.string.app_type).equals(Codes.APP_TYPE_FREE))
-			getMenuInflater().inflate(R.menu.action_bar_free, menu);
-		else if(getString(R.string.app_type).equals(Codes.APP_TYPE_PAY))
-			getMenuInflater().inflate(R.menu.action_bar_pay, menu);
+			getMenuInflater().inflate(R.menu.action_bar, menu);
         return true;
     }
 
@@ -121,10 +108,6 @@ public class MainActivity extends FragmentActivity {
 		switch (item.getItemId()){
 		case R.id.menu_rateApp:
 			new RateApp(this);
-			break;
-			
-		case R.id.menu_buyApp:
-			new RateApp(this, getString(R.string.app_pay_package_name));
 			break;
 		}
 

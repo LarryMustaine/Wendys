@@ -2,8 +2,7 @@ package com.larrystudio.wendys;
 
 import java.util.Locale;
 
-import com.larrystudio.availablesection.AvailableSounds;
-import com.larrystudio.downloadedsection.DownloadedSounds;
+import com.larrystudio.menu.MenuFragment;
 import com.larrystudio.wendys.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,14 +16,13 @@ import android.view.ViewGroup;
 
 public class FragmentBody extends Fragment {
 
-	public static final String LEVEL_CATEGORIES = "level_categories";
-	public static final String LEVEL_SUBSECTION = "level_subsection";
-	private final int AVAILABLE_SECTION = 0;
-	private final int DOWNLAODED_SECTION = 1;
-	private final int PAGER_SECTIONS = 2;
+	private final int PAGER_SECTIONS = 3;
+	public static final int MENU_SECTION = 0;
+	public static final int IMAGES_SECTION = 1;
+	public static final int VIDEOS_SECTION = 2;
 	private SectionsPagerAdapter mSectionsPagerAdapter;
 	private ViewPager mViewPager;
-	private int pageSelected = 0;
+	private int pageSelected = MENU_SECTION;
 	private Fragment fragment[] = null;
 
 	@Override
@@ -60,17 +58,20 @@ public class FragmentBody extends Fragment {
 
 		@Override
 		public Fragment getItem(int position) {
-			
 			if(fragment[position] == null){
 				switch (position) {
 				case 0:
-					fragment[position] = new AvailableSounds();
+					fragment[position] = new MenuFragment(mViewPager);
 					break;
 				case 1:
-					fragment[position] = new DownloadedSounds();
+					fragment[position] = new MenuFragment(mViewPager);
+					break;
+				case 2:
+					fragment[position] = new MenuFragment(mViewPager);
 					break;
 				}
 			}
+			
 			return fragment[position];
 		}
 
@@ -84,29 +85,24 @@ public class FragmentBody extends Fragment {
 			Locale l = Locale.getDefault();
 			switch (position) {
 			case 0:
-				return getString(R.string.title_available_sounds).toUpperCase(l);
+				return getString(R.string.title_menu_fragment).toUpperCase(l);
 			case 1:
-				return getString(R.string.title_downloaded_sounds).toUpperCase(l);
+				return getString(R.string.title_images_fragment).toUpperCase(l);
+			case 2:
+				return getString(R.string.title_videos_fragment).toUpperCase(l);
 			}
 			return null;
 		}	
 	}
 
 	public boolean handleBackButton() {
-       	 if(pageSelected == AVAILABLE_SECTION){
-       		 if(AvailableSounds.currentLevel.equals(LEVEL_SUBSECTION))
-       			 ((AvailableSounds) fragment[pageSelected]).setInformationToList("Categories", null);
-       		 else if (AvailableSounds.currentLevel.equals(LEVEL_CATEGORIES)){
-       			return false;
-       		 }
-       	 }else if(pageSelected == DOWNLAODED_SECTION){
-       		 if(DownloadedSounds.currentLevel.equals(LEVEL_SUBSECTION))
-       			 ((DownloadedSounds) fragment[pageSelected]).setInformationToList("Categories", null);
-       		 else if (DownloadedSounds.currentLevel.equals(LEVEL_CATEGORIES)){
-       			return false;
-       		 }
-       	 }
-        
-        return true;
+		switch(pageSelected){
+		case MENU_SECTION: return false;
+		case IMAGES_SECTION:
+		case VIDEOS_SECTION:
+			mViewPager.setCurrentItem(MENU_SECTION);
+		}
+
+		return true;
 	}
 }

@@ -19,7 +19,7 @@ public class About extends Activity{
 		
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.about);
+		setContentView(R.layout.activity_about);
 		
 		findViewById(R.id.txtContact).setOnClickListener(new OnClickListener() {
 			

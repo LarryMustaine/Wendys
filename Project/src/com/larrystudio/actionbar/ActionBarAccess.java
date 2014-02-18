@@ -28,8 +28,7 @@ public final class ActionBarAccess {
 	}
 	
 	private static void setTitles(Activity activity) {
-		actionBar.setTitle(activity.getString(R.string.action_bar_title));
-		actionBar.setSubtitle(activity.getString(R.string.action_bar_subtitle));
+		actionBar.setTitle(activity.getString(R.string.app_name));
 		actionBar.show();
 	}
 

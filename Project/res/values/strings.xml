@@ -6,20 +6,10 @@
     	PAY  DB: https://dl.dropboxusercontent.com/s/60snbn1x1pzzj67/BD_Pay.txt?dl=1
     	FREE DB: https://dl.dropboxusercontent.com/s/5miv5xrvirn07jd/BD_Free.txt?dl=1
     	TEST DB: https://dl.dropboxusercontent.com/s/gleont84gpefaqj/BD_Testing.txt?dl=1
-    	
-    	NAME PAY:  Video Games Music
-    	NAME FREE: Video Games Music (Free)
-    	
-    	APP TYPE FREE: Free
-    	APP TYPE PAY:  Pay
-    	
-    	PACKAGE NAME PAY:  com.larrystudio.videogamesmusicpay
-    	PACKAGE NAME FREE: com.larrystudio.videogamesmusic
     -->
     
     <string name="DB_URL">https://dl.dropboxusercontent.com/s/gleont84gpefaqj/BD_Testing.txt?dl=1</string>
     <string name="app_name">TLC Wendys</string>
-    <string name="app_type">Free</string>
     
     <string name="wendys_password">a</string>
     
@@ -30,15 +20,12 @@
     <string name="bugsense_api_key">67e27f15</string>
     <string name="gcm_project_id">1002937414761</string>
     
-    <string name="action_bar_title">TLC Wendys</string> 
-    <string name="action_bar_subtitle">and Tones!</string> 
     <string name="action_rate_app">Rate App</string>
-    <string name="action_buy_app">Buy App</string>
     
-    <string name="title_available_sounds">Available Sounds</string>
-    <string name="title_downloaded_sounds">Downloaded Sounds</string>
+    <string name="title_menu_fragment">Menu</string>
+    <string name="title_images_fragment">Imagenes</string>
+    <string name="title_videos_fragment">Videos</string>
     
-    <string name="app_pay_package_name">com.larrystudio.videogamesmusicpay</string>
     <string name="content_description">Image Holder</string>
     <string name="downloading_db">Getting info from server&#8230;</string>
     <string name="saving_db">Saving&#8230; Please do not turn off your console.</string>

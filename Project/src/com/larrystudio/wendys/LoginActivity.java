@@ -25,7 +25,7 @@ public class LoginActivity extends Activity {
 
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-		setContentView(R.layout.login_activity);
+		setContentView(R.layout.activity_login);
 		
 		findViewById(R.id.image_face).setOnClickListener(new OnClickListener() {
 			

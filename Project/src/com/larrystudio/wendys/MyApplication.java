@@ -19,6 +19,7 @@ public class MyApplication extends Application {
         .resetViewBeforeLoading(true)
         .cacheInMemory(true)
         .cacheOnDisc(true)
+        .delayBeforeLoading(200)
         .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)
         .build();
 	
