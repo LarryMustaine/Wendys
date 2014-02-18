@@ -2,7 +2,9 @@ package com.larrystudio.wendys;
 
 import java.util.Locale;
 
+import com.larrystudio.images.ImagesFragment;
 import com.larrystudio.menu.MenuFragment;
+import com.larrystudio.videos.VideosFragment;
 import com.larrystudio.wendys.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -64,10 +66,10 @@ public class FragmentBody extends Fragment {
 					fragment[position] = new MenuFragment(mViewPager);
 					break;
 				case 1:
-					fragment[position] = new MenuFragment(mViewPager);
+					fragment[position] = new ImagesFragment();
 					break;
 				case 2:
-					fragment[position] = new MenuFragment(mViewPager);
+					fragment[position] = new VideosFragment();
 					break;
 				}
 			}

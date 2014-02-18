@@ -6,36 +6,45 @@
     android:baselineAligned="false"
     android:orientation="vertical" >
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingBottom="20dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="20dp" >
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
 
         <ImageView
             android:id="@+id/image_images"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@drawable/button_press_state" />
-    </LinearLayout>
+            android:layout_gravity="center"
+            android:src="@drawable/banner_images" />
 
-    <LinearLayout
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:src="@drawable/ic_action_camera" />
+    </FrameLayout>
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:paddingBottom="20dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="20dp" >
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp" >
 
         <ImageView
             android:id="@+id/image_videos"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@drawable/button_press_state" />
-    </LinearLayout>
+            android:src="@drawable/banner_videos" />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|left"
+            android:src="@drawable/ic_action_video" />
+    </FrameLayout>
 
 </LinearLayout>
