@@ -7,10 +7,7 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import com.larrystudio.wendys.R;
 
-import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
@@ -19,27 +16,18 @@ public class RefreshDBTask extends AsyncTask<Void, Void, Boolean>
 {
 	private Context context;
 	private UpdateDB updateDB;
-	private Dialog dialog;
-	private boolean showDialog;
+	private String DB_URL;
 	
-	public RefreshDBTask(Context context, UpdateDB updateDB, boolean showDialog){
+	public RefreshDBTask(Context context, String DB_URL, UpdateDB updateDB){
 		this.context = context;
+		this.DB_URL = DB_URL;
 		this.updateDB = updateDB;
-		this.showDialog = showDialog;
-	}
-
-	@Override
-	protected void onPreExecute() {
-		super.onPreExecute();
-		if(showDialog)
-			dialog = ProgressDialog.show(context, null, context.getString(R.string.downloading_db));
 	}
 
 	@Override
 	protected Boolean doInBackground(Void... params){
-		
 		try {
-			URL url = new URL(context.getString(R.string.DB_IMAGES_URL));
+			URL url = new URL(DB_URL);
 			HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
 			urlConnection.setRequestMethod("GET");
 			urlConnection.setDoOutput(true);
@@ -50,7 +38,6 @@ public class RefreshDBTask extends AsyncTask<Void, Void, Boolean>
 			File cacheDir = context.getCacheDir(); 
 			File file = new File(cacheDir,"DB.txt");
 			FileOutputStream fileOutput = new FileOutputStream(file);
-
 
 			InputStream inputStream = urlConnection.getInputStream();
 
@@ -74,50 +61,15 @@ public class RefreshDBTask extends AsyncTask<Void, Void, Boolean>
 	@Override
 	protected void onPostExecute(Boolean result) {
 		super.onPostExecute(result);
-		if(dialog != null && dialog.isShowing() && showDialog)
-			dialog.dismiss();
 		
 		if(result)
-			new UpdateDatabaseTask().execute();
-		else{
-			updateDB.loadInformation();
-			updateDB.populateList();
-			updateDB.pull2RefreshComplete();
-		}	
+			updateDB.onSuccess();
+		else
+			updateDB.onFail();
 	}
 	
-	private class UpdateDatabaseTask extends AsyncTask<Void, Void, Void>{
-
-		@Override
-		protected void onPreExecute() {
-			super.onPreExecute();
-			if(showDialog)
-				dialog = ProgressDialog.show(context, null, context.getString(R.string.saving_db));
-		}
-		
-		@Override
-		protected Void doInBackground(Void... arg0) {
-			updateDB.updateDatabase();
-			return null;
-		}
-
-		@Override
-		protected void onPostExecute(Void result) {
-			super.onPostExecute(result);
-			
-			if(dialog != null && dialog.isShowing() && showDialog)
-				try{dialog.dismiss();}catch(Exception e){}
-			
-			updateDB.loadInformation();
-			updateDB.populateList();
-			updateDB.pull2RefreshComplete();
-		}
-	}
-
 	public interface UpdateDB{	
-		public void updateDatabase();
-		public void loadInformation();
-		public void populateList();
-		public void pull2RefreshComplete();
+		public void onSuccess();
+		public void onFail();
 	}
 }

@@ -1,11 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    android:baselineAligned="false"
-    android:orientation="vertical" >
+    android:orientation="horizontal" >
 
-  
+    <uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout
+        android:id="@+id/pull2refresh"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ListView
+            android:id="@+id/lvImages"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:dividerHeight="2dp"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:paddingTop="5dp" />
+    </uk.co.senab.actionbarpulltorefresh.library.PullToRefreshLayout>
 
 </LinearLayout>

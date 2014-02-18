@@ -7,23 +7,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  
 public class WendysSQLite extends SQLiteOpenHelper {
  
-    String sqlCreate  = "CREATE TABLE Sounds ( Category         TEXT, " +
-    										 " Section     		TEXT, " +
-    								     	 " Name        		TEXT, " +
-    										 " Downloaded  		TEXT, " +
-    									     " URL         		TEXT, " +
-    									     " Status      		TEXT, " +
-    									     " URL_Sound        TEXT primary key, " +
-    									     " Downloaded_Sound TEXT, " +
-    									     " LocalPath_Sound  TEXT, " +
-    										 " LocalPath 		TEXT)";
-    
-    String sqlCreate2 = "CREATE TABLE Categories ( Section     TEXT, " +
-			                                     " Name        TEXT, " +
-			                                     " Downloaded  TEXT, " +
-			                                     " URL         TEXT primary key, " +
-			                                     " Status      TEXT, " +
-			                                     " LocalPath   TEXT)";
+    String sqlCreate  = "CREATE TABLE Images (url TEXT primary key, comment TEXT)";
+    String sqlCreate2 = "CREATE TABLE Videos (url TEXT primary key, comment TEXT)";
     
     public WendysSQLite(Context context, String nombre, CursorFactory factory, int version) {
         super(context, nombre, factory, version);

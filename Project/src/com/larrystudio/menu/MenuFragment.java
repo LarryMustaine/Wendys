@@ -79,7 +79,7 @@ public class MenuFragment extends Fragment{
 		imgFrame.setVisibility(View.INVISIBLE);
 		
 		Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_in_right);
-	    animation.setDuration(1000);
+	    animation.setDuration(500);
 	    
 	    animation.setAnimationListener(new AnimationListener() {
 	        @Override public void onAnimationStart(Animation animation) {}
