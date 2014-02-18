@@ -33,7 +33,7 @@ public class ImagesAdapter extends BaseAdapter {
 		if(convertView == null){
 			viewHolder = new ListViewHolder();
     		convertView = this.inflater.inflate(R.layout.image_list_row, null);
-    		initializeObjects(viewHolder.image, viewHolder.comment, convertView);
+    		initializeObjects(viewHolder, convertView);
     	}
     	else
     		viewHolder = (ListViewHolder) convertView.getTag();
@@ -51,9 +51,9 @@ public class ImagesAdapter extends BaseAdapter {
 		public TextView comment;
 	}
 	
-	private void initializeObjects(ImageView image, TextView comment, View convertView) {
-		image   = (ImageView) convertView.findViewById(R.id.imgPicture);
-		comment = (TextView)  convertView.findViewById(R.id.txtComment);
+	private void initializeObjects(ListViewHolder viewHolder, View convertView) {
+		viewHolder.image   = (ImageView) convertView.findViewById(R.id.imgPicture);
+		viewHolder.comment = (TextView)  convertView.findViewById(R.id.txtComment);
 	}
 	
 	private void setImage(ImageView image, String URL) {
