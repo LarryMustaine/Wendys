@@ -27,4 +27,10 @@ public class ImageZoomActivity extends Activity {
 	    GestureImageView image = (GestureImageView) findViewById(R.id.image);
 	    imageLoader.displayImage(filePath, image);
 	}
+	
+	@Override
+	public void onBackPressed() {
+		finish();
+		ImageZoomActivity.this.overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+	}
 }

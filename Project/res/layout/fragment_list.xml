@@ -12,7 +12,7 @@
         android:layout_gravity="center" >
 
         <ListView
-            android:id="@+id/lvImages"
+            android:id="@+id/lvGeneric"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:dividerHeight="2dp"

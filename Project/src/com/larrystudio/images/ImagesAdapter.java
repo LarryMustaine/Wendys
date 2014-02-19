@@ -9,6 +9,7 @@ import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 
 import tools.GenericObject;
 import tools.SquareImageView;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -29,12 +30,14 @@ public class ImagesAdapter extends BaseAdapter {
 	private ImageLoader imageLoader;
 	private long DOUBLE_PRESS_INTERVAL = 250;
 	private long lastPressTime;
+	private Activity activity;
 	
 	public ImagesAdapter(Context context, ArrayList<GenericObject> objects){
 		this.context = context;
 		this.objects = objects;
 		this.inflater = LayoutInflater.from(context);
 		imageLoader = ImageLoader.getInstance();
+		activity = (Activity) context;
 	}
 	
 	@Override
@@ -100,6 +103,7 @@ public class ImagesAdapter extends BaseAdapter {
 		    		Intent showZoom = new Intent(context, ImageZoomActivity.class);
 					showZoom.putExtra(IMAGE_PATH, URL);
 					context.startActivity(showZoom);
+					activity.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
 		    	}
 
 		        lastPressTime = pressTime; 

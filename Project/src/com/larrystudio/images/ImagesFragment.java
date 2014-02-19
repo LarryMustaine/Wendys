@@ -35,7 +35,7 @@ public class ImagesFragment extends Fragment{
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View rootView = inflater.inflate(R.layout.fragment_images,container, false);
+		View rootView = inflater.inflate(R.layout.fragment_list,container, false);
 		
 		dbAccess = DataBaseAccess.getDatabaseConnection(getActivity());
 		DB_URL = getActivity().getString(R.string.DB_IMAGES_URL);
@@ -47,7 +47,7 @@ public class ImagesFragment extends Fragment{
 	}
 	
 	private void initializeObjects(View rootView) {
-		lvImages = (ListView) rootView.findViewById(R.id.lvImages);
+		lvImages = (ListView) rootView.findViewById(R.id.lvGeneric);
 		pull2refresh = (PullToRefreshLayout) rootView.findViewById(R.id.pull2refresh);
 		progressBar = (ProgressBar) rootView.findViewById(R.id.progressBar);
 	}
