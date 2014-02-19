@@ -46,6 +46,8 @@ public class FragmentBody extends Fragment {
 				
 				if(position != MENU_SECTION)
 					((MenuFragment) fragment[MENU_SECTION]).hideImages();
+				else
+					((MenuFragment) fragment[MENU_SECTION]).animateImages();
 			}
 			
 			@Override public void onPageScrolled(int arg0, float arg1, int arg2) {}

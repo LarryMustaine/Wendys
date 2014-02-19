@@ -67,18 +67,37 @@ public class MenuFragment extends Fragment{
 	}
 	
 	public void animateImages() {
-		setAnimation(imgImages, imgFrameImages);
-		setAnimation(imgVideos, imgFrameVideos);
+		setAnimationEntrance(imgImages, imgFrameImages);
+		setAnimationEntrance(imgVideos, imgFrameVideos);
 	}
 
 	public void hideImages(){
-		imgImages.setVisibility(View.INVISIBLE);
-		imgVideos.setVisibility(View.INVISIBLE);
-		imgFrameImages.setVisibility(View.INVISIBLE);
-		imgFrameVideos.setVisibility(View.INVISIBLE);
+		setAnimationGone(imgImages, imgFrameImages);
+		setAnimationGone(imgVideos, imgFrameVideos);
 	}
 	
-	public void setAnimation(final ImageView imgImage, final ImageView imgFrame){
+	private void setAnimationGone(final ImageView imgImage, final ImageView imgFrame){
+		imgImage.setVisibility(View.VISIBLE);
+		imgFrame.setVisibility(View.VISIBLE);
+		
+		Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.slide_out_left);
+	    animation.setDuration(500);
+	    
+	    animation.setAnimationListener(new AnimationListener() {
+	        @Override public void onAnimationStart(Animation animation) {}
+	        @Override public void onAnimationRepeat(Animation animation) {}
+
+	        @Override
+	        public void onAnimationEnd(Animation animation) {
+	        	imgImage.setVisibility(View.INVISIBLE);
+	        	imgFrame.setVisibility(View.INVISIBLE);
+	        }
+	    });
+
+	    imgFrame.startAnimation(animation);
+	}
+
+	public void setAnimationEntrance(final ImageView imgImage, final ImageView imgFrame){
 		imgImage.setVisibility(View.INVISIBLE);
 		imgFrame.setVisibility(View.INVISIBLE);
 		
