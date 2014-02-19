@@ -62,6 +62,7 @@ public class ImagesAdapter extends BaseAdapter {
 	}
 	
 	private void setComment(TextView comment, String Comment) {
+		Comment = Comment.replace("_", " ");
 		comment.setText(Comment);
 	}
 	
