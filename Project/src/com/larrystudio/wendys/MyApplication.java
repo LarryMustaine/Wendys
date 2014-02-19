@@ -14,12 +14,10 @@ public class MyApplication extends Application {
 	    super.onCreate();
 	
 	    DisplayImageOptions options = new DisplayImageOptions.Builder()
-        .showImageOnLoading(R.drawable.loading)
         .showImageOnFail(R.color.black)
         .resetViewBeforeLoading(true)
         .cacheInMemory(true)
         .cacheOnDisc(true)
-        .delayBeforeLoading(200)
         .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)
         .build();
 	

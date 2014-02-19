@@ -79,7 +79,7 @@ public class MainActivity extends FragmentActivity {
     	mDrawerToggle = new ActionBarDrawerToggle(
                 this,
                 mDrawerLayout,
-                R.drawable.ic_action_gamepad,
+                R.drawable.ic_drawer,
                 R.string.app_name,
                 R.string.app_name
         );
