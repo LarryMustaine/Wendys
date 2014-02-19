@@ -48,8 +48,6 @@ public class MainActivity extends FragmentActivity {
         
         setDrawerMenu();
         setDrawerToggle();
-        
-       // new GCMManager(this).startGCMService();
     }
 
 	private void setDrawerMenu() {

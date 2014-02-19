@@ -18,7 +18,8 @@ public class MyApplication extends Application {
         .resetViewBeforeLoading(true)
         .cacheInMemory(true)
         .cacheOnDisc(true)
-        .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2)
+        .imageScaleType(ImageScaleType.EXACTLY)
+        .considerExifParams(true)
         .build();
 	
 	    ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getApplicationContext()).
