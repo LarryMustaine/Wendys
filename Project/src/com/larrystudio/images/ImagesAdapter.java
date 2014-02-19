@@ -4,11 +4,14 @@ import java.util.ArrayList;
 
 import com.larrystudio.wendys.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
 
 import tools.GenericObject;
 import tools.SquareImageView;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -48,6 +51,8 @@ public class ImagesAdapter extends BaseAdapter {
 		
 		convertView.setTag(viewHolder);
 
+		viewHolder.image.setVisibility(View.INVISIBLE);
+		
     	setImage(viewHolder.image, objects.get(position).getURL());
     	setComment(viewHolder.comment, objects.get(position).getComment());
     	setClick(viewHolder.image, objects.get(position).getURL());
@@ -65,8 +70,18 @@ public class ImagesAdapter extends BaseAdapter {
 		viewHolder.comment = (TextView)  convertView.findViewById(R.id.txtComment);
 	}
 	
-	private void setImage(ImageView image, String URL) {
-		imageLoader.displayImage(URL, image);
+	private void setImage(final ImageView image, String URL) {
+		imageLoader.displayImage(URL, image, new ImageLoadingListener() {
+			
+			@Override
+			public void onLoadingComplete(String URL, View view, Bitmap bitmap) {
+				image.setVisibility(View.VISIBLE);
+			}
+			
+			@Override public void onLoadingStarted(String arg0, View arg1) {}
+			@Override public void onLoadingFailed(String arg0, View arg1, FailReason arg2) {}
+			@Override public void onLoadingCancelled(String arg0, View arg1) {}
+		});
 	}
 	
 	private void setComment(TextView comment, String Comment) {
