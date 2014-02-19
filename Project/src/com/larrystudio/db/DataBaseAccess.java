@@ -87,6 +87,7 @@ public final class DataBaseAccess {
     			object.setComment(INFO.getString(1));
     			
     			objects.add(object);
+    			INFO.moveToNext();
     		}
     		
     		INFO.close();

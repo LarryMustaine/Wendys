@@ -6,6 +6,7 @@ import com.larrystudio.wendys.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import tools.GenericObject;
+import tools.SquareImageView;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,12 +48,12 @@ public class ImagesAdapter extends BaseAdapter {
 	}
 
 	public class ListViewHolder {
-		public ImageView image;
+		public SquareImageView image;
 		public TextView comment;
 	}
 	
 	private void initializeObjects(ListViewHolder viewHolder, View convertView) {
-		viewHolder.image   = (ImageView) convertView.findViewById(R.id.imgPicture);
+		viewHolder.image   = (SquareImageView) convertView.findViewById(R.id.imgPicture);
 		viewHolder.comment = (TextView)  convertView.findViewById(R.id.txtComment);
 	}
 	
