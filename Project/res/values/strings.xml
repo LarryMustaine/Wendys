@@ -5,7 +5,7 @@
     <string name="DB_IMAGES_URL">https://dl.dropboxusercontent.com/s/muatgkyhqw907t6/BD_Imagenes.txt?dl=1</string>
     <string name="DB_VIDEOS_URL">https://dl.dropboxusercontent.com/s/ptg6w0bt5965yj5/BD_Videos.txt?dl=1</string>
     
-    <string name="wendys_password">a</string>
+    <string name="wendys_password">morra</string>
     <string name="bugsense_api_key">67e27f15</string>
     
     <string name="db_name">WendysDB</string>
