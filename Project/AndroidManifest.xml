@@ -43,6 +43,12 @@
         <activity
             android:name="com.larrystudio.wendys.PasswordActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name="com.larrystudio.images.ImageZoomActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.larrystudio.videos.FullScreenVideoActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
