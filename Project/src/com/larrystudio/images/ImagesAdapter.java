@@ -2,7 +2,7 @@ package com.larrystudio.images;
 
 import java.util.ArrayList;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;

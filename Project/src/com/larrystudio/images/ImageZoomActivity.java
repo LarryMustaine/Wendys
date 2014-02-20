@@ -1,6 +1,6 @@
 package com.larrystudio.images;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.polites.android.GestureImageView;
 

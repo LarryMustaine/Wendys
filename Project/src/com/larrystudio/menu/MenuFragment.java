@@ -1,7 +1,7 @@
 package com.larrystudio.menu;
 
-import com.larrystudio.wendys.FragmentBody;
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.FragmentBody;
+import com.larrystudio.blondie.R;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;

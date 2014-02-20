@@ -1,11 +1,11 @@
-package com.larrystudio.wendys;
+package com.larrystudio.blondie;
 
 import java.util.Locale;
 
 import com.larrystudio.images.ImagesFragment;
 import com.larrystudio.menu.MenuFragment;
 import com.larrystudio.videos.VideosFragment;
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

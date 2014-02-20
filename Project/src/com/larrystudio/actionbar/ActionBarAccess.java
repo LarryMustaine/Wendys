@@ -1,6 +1,6 @@
 package com.larrystudio.actionbar;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import android.app.ActionBar;
 import android.app.Activity;

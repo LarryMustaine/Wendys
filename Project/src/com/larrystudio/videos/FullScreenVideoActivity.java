@@ -1,6 +1,6 @@
 package com.larrystudio.videos;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import android.app.Activity;
 import android.media.MediaPlayer;

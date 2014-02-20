@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import tools.GenericObject;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import android.content.Context;
 import android.database.Cursor;

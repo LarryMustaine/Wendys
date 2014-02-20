@@ -1,6 +1,6 @@
 package com.larrystudio.drawer;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import android.content.Context;
 import android.view.LayoutInflater;

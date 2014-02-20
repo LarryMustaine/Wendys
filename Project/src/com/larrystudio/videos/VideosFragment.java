@@ -13,7 +13,7 @@ import com.larrystudio.db.RefreshDBTask;
 import com.larrystudio.db.TaskResult;
 import com.larrystudio.db.UpdateDataBase;
 import com.larrystudio.db.WendysSQLite;
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import android.support.v4.app.Fragment;
 import android.database.sqlite.SQLiteDatabase;

@@ -1,4 +1,4 @@
-package com.larrystudio.wendys;
+package com.larrystudio.blondie;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
+import com.larrystudio.blondie.R;
 
 public class LoginActivity extends Activity {
 

@@ -2,7 +2,7 @@ package com.larrystudio.videos;
 
 import java.util.ArrayList;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import tools.GenericObject;
 import android.app.Activity;

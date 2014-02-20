@@ -2,7 +2,7 @@ package com.larrystudio.about;
 
 import tools.SendEmail;
 
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import android.app.Activity;
 import android.os.Bundle;

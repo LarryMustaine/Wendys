@@ -1,4 +1,4 @@
-package com.larrystudio.wendys;
+package com.larrystudio.blondie;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.EditText;
+import com.larrystudio.blondie.R;
 
 public class PasswordActivity extends Activity {
 

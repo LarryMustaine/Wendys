@@ -1,4 +1,4 @@
-package com.larrystudio.wendys;
+package com.larrystudio.blondie;
 
 import tools.RateApp;
 
@@ -6,7 +6,7 @@ import com.bugsense.trace.BugSenseHandler;
 import com.larrystudio.about.About;
 import com.larrystudio.actionbar.ActionBarAccess;
 import com.larrystudio.drawer.ListMenuDrawerAdapter;
-import com.larrystudio.wendys.R;
+import com.larrystudio.blondie.R;
 
 import android.content.Intent;
 import android.os.Build;
